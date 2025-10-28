@@ -1,0 +1,29 @@
+:root{
+  --bg:#f7f7fb;
+  --card:#ffffff;
+  --accent:#3b82f6;
+  --muted:#6b7280;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);margin:0;padding:24px;display:flex;align-items:flex-start;justify-content:center}
+.container{width:100%;max-width:640px}
+h1{margin:0 0 16px;font-weight:600}
+.todo-entry{display:flex;gap:8px;margin-bottom:12px}
+#new-todo{flex:1;padding:10px;border:1px solid #e6e9ef;border-radius:6px}
+#add-btn{padding:10px 14px;background:var(--accent);color:#fff;border:none;border-radius:6px;cursor:pointer}
+#add-btn:active{transform:translateY(1px)}
+.controls{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.filters{display:flex;gap:6px}
+.filter-btn{background:transparent;border:1px solid transparent;padding:6px 10px;border-radius:6px;cursor:pointer}
+.filter-btn.active{background:#eef2ff;border-color:var(--accent);color:var(--accent)}
+.todo-list{list-style:none;padding:0;margin:0}
+.todo-item{background:var(--card);display:flex;align-items:center;gap:8px;padding:10px;border-radius:8px;margin-bottom:8px;border:1px solid #eef0f5}
+.todo-item .title{flex:1}
+.todo-item.completed .title{text-decoration:line-through;color:var(--muted)}
+.todo-item button{background:transparent;border:0;cursor:pointer;color:var(--muted)}
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+.counts{margin-top:12px;color:var(--muted)}
+.edit-input{width:100%;padding:8px;border-radius:6px;border:1px solid #ddd}
+.small{font-size:0.9rem;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){#add-btn, .filter-btn{transition:transform .08s ease, background-color .12s}}

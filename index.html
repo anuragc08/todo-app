@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Todo App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container" aria-labelledby="app-title">
+    <h1 id="app-title">Todo</h1>
+
+    <section class="todo-entry">
+      <label for="new-todo" class="visually-hidden">Add todo</label>
+      <input id="new-todo" type="text" placeholder="What needs to be done?" aria-label="New todo" />
+      <button id="add-btn" aria-label="Add todo">Add</button>
+    </section>
+
+    <section class="controls" role="region" aria-label="Filters and actions">
+      <div class="filters" role="tablist" aria-label="Filters">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="active" role="tab" aria-selected="false">Active</button>
+        <button class="filter-btn" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+      </div>
+      <div class="actions">
+        <button id="export-btn">Export</button>
+        <button id="import-btn">Import</button>
+        <input id="import-file" type="file" accept="application/json" class="visually-hidden" />
+        <button id="clear-completed">Clear completed</button>
+        <button id="clear-all">Clear all</button>
+      </div>
+    </section>
+
+    <section aria-live="polite" class="todo-list-wrap">
+      <ul id="todo-list" class="todo-list" aria-label="Todo list"></ul>
+    </section>
+
+    <div id="counts" class="counts" aria-live="polite"></div>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
